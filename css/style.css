@@ -180,7 +180,7 @@ header #logo img {
 }
 
 .main3 {
-        overflow: hiden;
+        overflow: hidden;
 	line-height: 1.5;
 	border-bottom: 1px solid #b9ddf2;
 	padding: 20px;
