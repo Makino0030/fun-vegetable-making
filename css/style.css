@@ -179,6 +179,25 @@ header #logo img {
 	padding: 0 !important;px
 }
 
+.main3 {
+        overflow: hiden;
+	line-height: 1.5;
+	border-bottom: 1px solid #b9ddf2;
+	padding: 20px;
+}
+.main3:first-of-type {
+	border-top: 1px solid #b9ddf2;
+}
+.main3 img {
+	width: 2%;
+	float: left;
+	margin-right: 3%;
+}
+.main3 h4 {
+	font-size: 20px;
+	margin-bottom: 10px;
+
+
 /*フッター設定
 ---------------------------------------------------------------------------*/
 footer {
