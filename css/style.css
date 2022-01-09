@@ -11,14 +11,14 @@ html,body {height: 100%;}
 body {
 	margin: 0px;
 	padding: 0px;
-	color: #775570;	/*全体の文字色*/
+	color: #7c5b75;	/*全体の文字色*/
 	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	/*フォント種類*/
 	font-size: 16px;	/*文字サイズ*/
 	line-height: 2;		/*行間*/
-	background: #f8f1f7;	/*背景色*/
+	background: rgb(253, 246, 250);	/*背景色*/
 	-webkit-text-size-adjust: none;
 }
-h2,h3,h4,h5,p,ul,ol,dl,dt,dd,form,figure,form {margin: 0px;padding: 0px;font-size: 100%;font-weight: normal;}
+h1,h2,h3,h4,h5,p,ul,ol,li,dl,dt,dd,form,figure,form {margin: 0px;padding: 0px;font-size: 100%;font-weight: normal;}
 ul {list-style-type: none;}
 ol {padding-left: 40px;padding-bottom: 15px;}
 img {border: none;max-width: 100%;height: auto;vertical-align: middle;}
@@ -30,7 +30,16 @@ iframe {width: 100%;}
 100% {opacity: 1;}
 }
 
-
+/*リンク（全般）設定
+---------------------------------------------------------------------------*/
+a {
+	color: #776955;		/*リンクテキストの色*/
+	transition: 0.5s;	/*マウスオン時の移り変わるまでの時間設定。0.5秒。*/
+}
+a:hover {
+	color: #ff4765;			/*マウスオン時の文字色*/
+	text-decoration: none;	/*マウスオン時に下線を消す設定。残したいならこの１行削除。*/
+}
 
 /*ヘッダー（一番上の、ロゴやメニューが入っているブロック）
 ---------------------------------------------------------------------------*/
@@ -39,17 +48,15 @@ header {
 	overflow: auto;
 	position: relative;
 	font-size: 120%;
-	background: #b9ddf2 url(../images/背景.png) no-repeat center center / cover;	/*背景画像の読み込み*/
+	background: #bfe3f5 url(../images/背景.png) no-repeat center center / cover;	/*背景色*/
 }
-
-
 /*ロゴ画像*/
 header #logo img {
 	display: block;
-	width: 30%;	/*画像の幅*/
+	width: 28%;	/*画像の幅*/
 	position: absolute;
-	left: 35%;		/*ロゴやメニューが入っているブロックに対して、左からの配置場所の指定。*/
-	bottom: 30%;	/*ロゴやメニューが入っているブロックに対して、下からの配置場所の指定。*/
+	left: 36%;		/*ロゴやメニューが入っているブロックに対して、左からの配置場所の指定。*/
+	bottom: 35%;	/*ロゴやメニューが入っているブロックに対して、下からの配置場所の指定。*/
 }
 
 /*メニュー
@@ -76,12 +83,13 @@ header #logo img {
 	width: 140px;	/*メニューの幅*/
 	color: rgb(255, 255, 255);	/*文字色*/
 	border-bottom: 2px solid transparent;	/*下線の幅、線種、色。transparentは透明の事。*/
-	padding-bottom: 7px;	/*下線と文字の間にとる余白*/
+	padding-bottom: 7px;
+	font-size: 110%;	/*下線と文字の間にとる余白*/
 }
 /*マウスオン時の指定*/
 #menubar li a:hover {
-	color: rgb(103, 137, 223);
-	border-bottom: 2px solid rgb(103, 137, 223);	/*下線の幅、線種、色*/
+	border-bottom: 2px solid #016699;
+	color: #016699;	/*下線の幅、線種、色*/
 	letter-spacing: 0.1em;			/*文字間隔を少しだけ広くする指定。そのままがいいならこの１行を削除。*/
 }
 
@@ -103,27 +111,29 @@ header #logo img {
 }
 /*コンテンツ内にあるh2(見出し)タグの指定*/
 #contents h2 {
-	margin: 2em auto;
-	padding: 1em;
-	width: 90%; /* ボックス幅 */
-	background-color: #b9ddf2; /* ボックス背景色 */
-	color: #fff; /* 文章色 */
-	box-shadow: 0 0 5px 1px #68aabf; /* 影 */
-	border-radius: 10px; /* 角の丸み */
-	text-align: center;
-	font-size: 120%;
-   }
-/*コンテンツ内にあるh3(見出し)タグの指定*/
-#contents h3 {
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 	clear: both;
-	padding: 0 20px;
-	font-size: 18px;		/*文字サイズ*/
+	padding: 0 30px;
+	font-size: 25px;		/*文字サイズ*/
 	text-align: center;		/*文字をセンタリング*/
 	letter-spacing: 0.1em;	/*文字間隔を少しだけ広くする指定*/
-	border: 2px solid #b9ddf2;	/*枠線の幅、線種、色*/
-	border-radius: 100px;	/*角を丸くする指定。大きめであれば適当で構いません。*/
+	background: #bfe3f5;	/*背景色*/
+	color: #fff;			/*文字色*/
+	border-radius: 10px;	/*角を丸くする指定。大きめであれば適当で構いません。*/
+	box-shadow: 0 0 5px 1px #68aabf; /* 影 */
+}
+/*コンテンツ内にあるh3(見出し)タグの指定*/
+#contents h3 {
+	margin-bottom: 30px;
+	clear: both;
+	padding: 0 20px;
+	font-size: 20px;		/*文字サイズ*/
+	text-align: center;		/*文字をセンタリング*/
+	letter-spacing: 0.1em;	/*文字間隔を少しだけ広くする指定*/
+	border: 2px solid #bfe3f5;	/*枠線の幅、線種、色*/
+	border-radius: 10px;	/*角を丸くする指定。大きめであれば適当で構いません。*/
 	background: #fff;		/*背景色*/
+	box-shadow: 0 0 5px 1px #68aabf; /* 影 */
 }
 /*コンテンツ内にあるp(段落)タグ設定*/
 #contents p {
@@ -141,73 +151,73 @@ header #logo img {
 /*Serviceページ
 ---------------------------------------------------------------------------*/
 /*各ブロックごとの設定*/
-.main img {
+
+.list1 img {
+	width: 72%;
 	margin: auto;
-	width: 70%;
 	display: block;
 }
-
-.main2 img {
-	margin: auto;
-	width: 80%;
-	display: block;
-}
-
 .list {
 	overflow: hidden;
 	line-height: 1.5;
-	border-bottom: 1px solid #b9ddf2;	/*下線の幅、線種、色*/
+	border-bottom: 1px solid #bfe3f5;	/*下線の幅、線種、色*/
 	padding: 20px;	/*ボックス内の余白*/
 }
 /*１番目のlistブロックへの追加指定。上に線を入れる。*/
 .list:first-of-type {
-	border-top: 1px solid #b9ddf2;
+	border-top: 1px solid #bfe3f5;
 }
 /*h4見出しの設定*/
 .list h4 {
 	font-size: 20px;	/*文字サイズ*/
-	margin-bottom: 10px;
+	margin-bottom: 20px;
+	margin-top: 20px;
 }
 /*画像の設定*/
 .list img {
-	width: 42%;			/*画像幅*/
+	width: 30%;			/*画像幅*/
 	float: left;		/*画像を左に回り込み*/
 	margin-right: 3%	/*画像の右側に空けるスペース*/
 }
 /*段落タグ*/
 .list p {
-	padding: 0 !important;px
+	padding: 0 !important;
 }
 
-.main3 {
-        overflow: hidden;
+.list2 {
+	overflow: hidden;
 	line-height: 1.5;
-	border-bottom: 1px solid #b9ddf2;
-	padding: 20px;
+	border-bottom: 1px solid #bfe3f5;	/*下線の幅、線種、色*/
+	padding: 20px;	/*ボックス内の余白*/
 }
-.main3:first-of-type {
-	border-top: 1px solid #b9ddf2;
+/*１番目のlistブロックへの追加指定。上に線を入れる。*/
+.list2:first-of-type {
+	border-top: 1px solid #bfe3f5;
 }
-.main3 img {
-	width: 10%;
-	float: left;
-	margin-right: 3%;
-}
-.main3 h4 {
-	font-size: 20px;
+/*h4見出しの設定*/
+.list2 h4 {
+	font-size: 34px;	/*文字サイズ*/
 	margin-bottom: 10px;
-
+}
+/*画像の設定*/
+.list2 img {
+	width: 18%;			/*画像幅*/
+	float: left;		/*画像を左に回り込み*/
+	margin-right: 3%	/*画像の右側に空けるスペース*/
+}
+/*段落タグ*/
+.list2 p {
+	padding: 0 !important;
+}
 
 /*フッター設定
 ---------------------------------------------------------------------------*/
 footer {
 	clear: both;
 	text-align: center;
-	background: #b9ddf2;	/*背景色*/
+	background: #bfe3f5;	/*背景色*/
 	color: #fff;		/*文字色*/
-	font-size: 120%;		/*文字サイズ*/
-	height: 100px;
-	line-height: 100px;
+	font-size: 110%;		/*文字サイズ*/
 }
 footer a {
 	color: #fff;	/*リンクテキストの文字色*/
@@ -221,6 +231,60 @@ footer .pr {
 	font-size: 80%;
 }
 
+/*トップページ内「更新情報・お知らせ」ブロック
+---------------------------------------------------------------------------*/
+/*ブロック全体の設定*/
+#new dl {
+	padding-left: 20px;
+	margin-bottom: 15px;
+}
+/*日付設定*/
+#new dt {
+	float: left;
+	width: 9em;
+	letter-spacing: 0.1em;
+}
+/*記事設定*/
+#new dd {
+	padding-left: 9em;
+}
+
+/*テーブル
+---------------------------------------------------------------------------*/
+/*テーブル１行目に入った見出し部分（※caption）*/
+.ta1 caption {
+	border: 1px solid #ccc;	/*テーブルの枠線の幅、線種、色*/
+	border-bottom: none;	/*下線だけ消す*/
+	text-align: center;		/*文字をセンタリング*/
+	background: #f8cf9f;	/*背景色*/
+	color: #fff;			/*文字色*/
+	font-weight: bold;		/*太字に*/
+	padding: 10px;			/*ボックス内の余白*/
+}
+/*テーブル１行目に入った見出し部分（※tamidashi）*/
+.ta1 th.tamidashi {
+	width: auto;
+	text-align: center;	/*文字をセンタリング*/
+	background: #f8cf9f;	/*背景色*/
+	color: #fff;			/*文字色*/
+}
+/*ta1テーブルブロック設定*/
+.ta1 {
+	table-layout: fixed;
+	width: 100%;
+	margin: 0 auto 20px;
+	background: #fff;	/*背景色*/
+}
+.ta1, .ta1 td, .ta1 th {
+	word-break: break-all;
+	border: 1px solid #ccc;	/*テーブルの枠線の幅、線種、色*/
+	padding: 10px;			/*テーブル内の余白*/
+}
+/*テーブルの左側ボックス*/
+.ta1 th {
+	text-align: center;	/*センタリング*/
+	width: 30%;			/*幅*/
+}
 
 /*PAGE TOP（↑）設定
 ---------------------------------------------------------------------------*/
@@ -241,6 +305,18 @@ footer .pr {
 	background: rgba(0,0,0,0.8);	/*背景色。0,0,0は黒色の指定で0.8は色が80%出た状態。*/
 }
 
+/*トップページのNEWアイコン
+---------------------------------------------------------------------------*/
+.newicon {
+	background: #F00;	/*背景色*/
+	color: #FFF;		/*文字色*/
+	font-size: 70%;
+	line-height: 1.5;
+	padding: 2px 5px;
+	border-radius: 2px;
+	margin: 0px 5px;
+	vertical-align: text-top;
+}
 
 /*ul.disc,olタグ
 ---------------------------------------------------------------------------*/
@@ -258,7 +334,7 @@ ol {
 .mb15,.mb1em {margin-bottom: 15px;}
 .clear {clear: both;}
 ul.disc {padding: 0em 25px 15px 40px;list-style: disc;}
-.color1, .color1 a {color: rgb(60, 84, 130);}
+.color1, .color1 a {color: #0055d5;}
 .pr {font-size: 10px;}
 .wl {width: 96%;}
 .ws {width: 50%;}
@@ -280,7 +356,7 @@ ul.disc {padding: 0em 25px 15px 40px;list-style: disc;}
 ---------------------------------------------------------------------------*/
 /*ロゴ画像*/
 header #logo img {
-	width: 100%;	/*画像の幅*/
+	width: 30%;	/*画像の幅*/
 	left: 35%;	/*ロゴやメニューが入っているブロックに対して、左からの配置場所の指定。*/
 }
 
@@ -296,8 +372,8 @@ header #logo img {
 ---------------------------------------------------------------------------*/
 /*ロゴ画像*/
 header #logo img {
-	width: 100%;	/*画像の幅*/
-	left: 25%;	/*ロゴやメニューが入っているブロックに対して、左からの配置場所の指定。*/
+	width: 70%;	/*画像の幅*/
+	left: 45%;	/*ロゴやメニューが入っているブロックに対して、左からの配置場所の指定。*/
 }
 
 /*コンテナー（headerとfooterをのぞくブロックを囲むブロック）
@@ -315,7 +391,7 @@ header #logo img {
 }
 /*コンテンツ内にあるh3(見出し)タグの指定*/
 #contents h3 {
-	font-size: 16px;	/*文字サイズ*/
+	font-size: 14px;	/*文字サイズ*/
 }
 
 /*Serviceページ
@@ -340,85 +416,3 @@ ol {
 .big1 {font-size: 22px;letter-spacing: normal;}
 
 }
-
-
-
-
-.label-title {
-	font-size: 40px;
-	text-align: center;
-   }
-	 
-	
-   form {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 720px;
-	padding: 20px;
-	}
-	
-	
-	
-	
-   .form-sample {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	padding-left: 14px;
-	padding-right: 14px;
-	padding-bottom: 15px;
-   }
-	
-	
-   .form-label {
-	width: 100%;
-	max-width: 248px;
-	font-size: 19px;
-   }
-	
-   .form-label.last {
-	margin-top: 10px;
-	margin-bottom: auto;
-   }
-  
-  
-   .form-input {
-	border: 1px solid rgb(60, 84, 130);
-	border-radius: 5px;
-	margin-left: 40px;
-	padding-left: 10px;
-	height: 50px;
-	width: 100%;
-	max-width: 410px;
-	font-size: 18px;
-   }
-	
-   .form-textarea {
-	border: 1px solid rgb(60, 84, 130);
-	border-radius: 6px;
-	margin-left: 40px;
-	padding-left: 1em;
-	padding-right: 1em;
-	height: 216px;
-	flex: 1;
-	width: 100%;
-	max-width: 410px;
-	font-size: 18px;
-   }
-	
-   .form-Btn {
-	border-radius: 6px;
-	margin-top: 32px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	width: 280px;
-	display: block;
-	letter-spacing: 0.05em;
-	background: rgb(103, 137, 223);
-	color: #fff;
-	font-weight: bold;
-	font-size: 20px;
-   }
-  
